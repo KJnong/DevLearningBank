@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL-Bank", "DL-Bank\DL-Bank.csproj", "{0612C93C-5E88-49D5-A10F-8CED679E187D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0612C93C-5E88-49D5-A10F-8CED679E187D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0612C93C-5E88-49D5-A10F-8CED679E187D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0612C93C-5E88-49D5-A10F-8CED679E187D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0612C93C-5E88-49D5-A10F-8CED679E187D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33A2F9AB-0FB7-49E5-B0A5-DFFFF841CE9E}
+	EndGlobalSection
+EndGlobal
