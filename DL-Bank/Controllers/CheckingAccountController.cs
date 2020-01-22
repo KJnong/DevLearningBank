@@ -19,7 +19,7 @@ namespace DL_Bank.Controllers
         public ActionResult Details()
         {
             var checkingAccount = new CheckingAccount 
-            { AccountNumber = "1029716994", FirstName = "Jethro", LastName = "Nong", Balance = 10000 };
+            { AccountNumber = "1029716994", FirstName = "Jethro", LastName = "Nong", Balance = 10000m };
             return View(checkingAccount);
         }
 
