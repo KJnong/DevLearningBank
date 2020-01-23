@@ -155,6 +155,11 @@ namespace DL_Bank.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var db = new ApplicationDbContext();
+                    var accountNumber = (12346 + db.CheckingAccounts.Count()).ToString().PadLeft(10,'0');
+                    var checkinAccount = new CheckingAccount { AccountNumber = accountNumber , FirstName= model.FirstName , LastName=model.LastName, Balance=0m, ApplicationUserId=user.Id};
+                    db.CheckingAccounts.Add(checkinAccount);
+                    db.SaveChanges();
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -423,6 +428,9 @@ namespace DL_Bank.Controllers
             base.Dispose(disposing);
         }
 
+   
+
+
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
@@ -482,4 +490,51 @@ namespace DL_Bank.Controllers
         }
         #endregion
     }
+
+    //public class Man : Person 
+    //{
+
+    //    public Man()
+    //    {
+    //        Gender = "Male";
+    //    }
+
+    //    public Man BuildPerson(string firstname, string surname)
+    //    {
+    //        this.Firstname = firstname;
+    //        this.Surname = surname;
+
+    //        return this;
+    //    }
+    //}
+    //public class Woman : Person
+    //{
+
+    //    public Woman()
+    //    {
+    //        Gender = "Female";
+    //    }
+
+    //    public Woman BuildPerson(string firstname, string surname)
+    //    {
+    //        this.Firstname = firstname;
+    //        this.Surname = surname;
+
+    //        return this;
+    //    }
+    //}
+
+    //public abstract class Person
+    //{
+    //    public string Firstname { get; set; }
+
+    //    public string Surname { get; set; }
+
+    //    public string Gender { get; set; }
+    //}
+
+
+
+
+
 }

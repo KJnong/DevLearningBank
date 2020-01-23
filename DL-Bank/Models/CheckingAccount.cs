@@ -34,5 +34,12 @@ namespace DL_Bank.Models
 
         [DataType(DataType.Currency)]
         public decimal Balance { get; set; }
+
+        public virtual ApplicationUser user { get; set; }
+
+        [Required]
+        public string ApplicationUserId { get; set; }
+
+        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

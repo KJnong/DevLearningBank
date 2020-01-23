@@ -102,3 +102,7 @@ C:\Users\JETHRO\Desktop\DL-Bank\DL-Bank\obj\Debug\DL-Bank.csprojAssemblyReferenc
 C:\Users\JETHRO\Desktop\DL-Bank\DL-Bank\obj\Debug\DL-Bank.csproj.CopyComplete
 C:\Users\JETHRO\Desktop\DL-Bank\DL-Bank\obj\Debug\DL-Bank.dll
 C:\Users\JETHRO\Desktop\DL-Bank\DL-Bank\obj\Debug\DL-Bank.pdb
+C:\Users\JETHRO\Desktop\DL-Bank\DL-Bank\obj\Debug\DL_Bank.Migrations.InitialCreate.resources
+C:\Users\JETHRO\Desktop\DL-Bank\DL-Bank\obj\Debug\DL-Bank.csproj.GenerateResource.cache
+C:\Users\JETHRO\Desktop\DL-Bank\DL-Bank\obj\Debug\DL_Bank.Migrations.Test1.resources
+C:\Users\JETHRO\Desktop\DL-Bank\DL-Bank\obj\Debug\DL_Bank.Migrations.TransactionTable.resources

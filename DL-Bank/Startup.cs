@@ -9,6 +9,15 @@ namespace DL_Bank
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
+            //ListenToAllRequestHereFirst(app);
+
         }
+
+
+        //public void ListenToAllRequestHereFirst(IAppBuilder app)
+        //{
+        //    System.Web.HttpContext.Current.Response.Write("Request came here first");
+        //}
     }
 }

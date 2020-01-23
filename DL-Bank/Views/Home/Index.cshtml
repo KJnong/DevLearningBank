@@ -24,7 +24,7 @@
         <a href="#" class="btn btn-primary btn-lg btn-block">
             <span class="glyphicon glyphicon-transfer"></span>Transfare Funds
         </a>
-        <a href="#" class="btn btn-primary btn-lg btn-block">
+        <a href="@Url.Action("Deposit","Transaction", new {checkingAccountId = ViewBag.CheckingAccount })" class="btn btn-primary btn-lg btn-block">
             <span class="glyphicon glyphicon-circle-arrow-up"></span>Deposit
         </a>
     </div> 
