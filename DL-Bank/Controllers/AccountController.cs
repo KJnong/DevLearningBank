@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DL_Bank.Models;
+using DL_Bank.Services;
 
 namespace DL_Bank.Controllers
 {
@@ -151,15 +152,24 @@ namespace DL_Bank.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = $"{model.FirstName}  {model.LastName}", Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    var db = new ApplicationDbContext();
-                    var accountNumber = (12346 + db.CheckingAccounts.Count()).ToString().PadLeft(10,'0');
-                    var checkinAccount = new CheckingAccount { AccountNumber = accountNumber , FirstName= model.FirstName , LastName=model.LastName, Balance=0m, ApplicationUserId=user.Id};
-                    db.CheckingAccounts.Add(checkinAccount);
-                    db.SaveChanges();
+                    var service = new CheckingAccountService(HttpContext.GetOwinContext().Get<ApplicationDbContext>());
+                    service.CreateCheckingAccount(model.FirstName, model.LastName, user.Id, 0);
+
+                    //Before using CheckingAccountServices
+                    //var db = new ApplicationDbContext();
+                    //var accountNumber = (12346 + db.CheckingAccounts.Count()).ToString().PadLeft(10,'0');
+                    //var checkinAccount = new CheckingAccount 
+                    //{ AccountNumber = accountNumber ,
+                    //    FirstName= model.FirstName ,
+                    //    LastName=model.LastName, Balance=0m,
+                    //    ApplicationUserId=user.Id
+                    //};
+                    //db.CheckingAccounts.Add(checkinAccount);
+                    //db.SaveChanges();
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -379,6 +389,9 @@ namespace DL_Bank.Controllers
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+                        var service = new CheckingAccountService(HttpContext.GetOwinContext().Get<ApplicationDbContext>());
+                        service.CreateCheckingAccount("Facebook", "User", user.Id, 500);
+
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }
