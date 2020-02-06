@@ -8,6 +8,10 @@ namespace DL_Bank.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "FirstName")]
+        public string FirstName { get; set; }
     }
 
     public class ExternalLoginListViewModel
