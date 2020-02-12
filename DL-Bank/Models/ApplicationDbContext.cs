@@ -7,10 +7,16 @@ using System.Web;
 
 namespace DL_Bank.Models
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public interface IApplicationDbContext
     {
-        public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<CheckingAccount> CheckingAccounts { get; set; }
+        public IDbSet<Transaction> Transactions { get; set; }
+        public IDbSet<CheckingAccount> CheckingAccounts { get; set; }
+        int SaveChanges();
+    }
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
+    {
+        public IDbSet<Transaction> Transactions { get; set; }
+        public IDbSet<CheckingAccount> CheckingAccounts { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

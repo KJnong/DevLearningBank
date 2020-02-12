@@ -1,0 +1,13 @@
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\bin\Debug\UnitTestDL-Bank.dll
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\bin\Debug\UnitTestDL-Bank.pdb
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\obj\Debug\UnitTestDL-Bank.csprojAssemblyReference.cache
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\obj\Debug\UnitTestDL-Bank.csproj.CopyComplete
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\obj\Debug\UnitTestDL-Bank.dll
+C:\Users\JETHRO\Desktop\DL-Bank\UnitTestDL-Bank\obj\Debug\UnitTestDL-Bank.pdb

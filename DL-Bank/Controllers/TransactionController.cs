@@ -10,10 +10,15 @@ namespace DL_Bank.Controllers
     [Authorize]
     public class TransactionController : Controller
     {
-        private ApplicationDbContext db;
+        private IApplicationDbContext db;
         public TransactionController()
         {
             db = new ApplicationDbContext();        
+        }
+
+        public TransactionController(IApplicationDbContext dbContext)
+        {
+            db = dbContext;
         }
 
         // GET: Transaction/Deposit
