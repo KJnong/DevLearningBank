@@ -28,4 +28,14 @@ namespace DL_Bank.Models
         }
     }
 
+    public class FakeApplicationDbContext : IApplicationDbContext
+    {
+        public IDbSet<Transaction> Transactions { get; set; }
+        public IDbSet<CheckingAccount> CheckingAccounts { get; set; }
+        public int SaveChanges()
+        {
+            return 0;
+        }
+    }
+
 }
