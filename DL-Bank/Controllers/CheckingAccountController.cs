@@ -1,4 +1,5 @@
 ﻿using DL_Bank.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,20 +8,37 @@ using System.Web.Mvc;
 
 namespace DL_Bank.Controllers
 {
+    [Authorize]
     public class CheckingAccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         // GET: CheckingAccount
+        
         public ActionResult Index()
         {
             return View();
-        }
+        } 
 
         // GET: CheckingAccount/Details/5
         public ActionResult Details()
         {
-            var checkingAccount = new CheckingAccount 
-            { AccountNumber = "1029716994", FirstName = "Jethro", LastName = "Nong", Balance = 10000m };
+            var userId = User.Identity.GetUserId();
+
+            var checkingAccount = db.CheckingAccounts.Where(m => m.ApplicationUserId == userId).First();
             return View(checkingAccount);
+        }
+
+        [Authorize(Roles ="Admin")]
+        public ActionResult DetailsForAdmin(int id)
+        {
+            var checkingAccount = db.CheckingAccounts.Find(id);
+            return View("Details" , checkingAccount);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult List()
+        {
+            return View(db.CheckingAccounts.ToList());
         }
 
         // GET: CheckingAccount/Create
