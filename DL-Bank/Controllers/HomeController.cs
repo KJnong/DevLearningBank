@@ -34,9 +34,17 @@ namespace DL_Bank.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.TheMessage = "Having trouble? Send us a message";
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Contact(string message)
+        {
+            ViewBag.TheMessage = "Thank you, We received your message and one of our consultant will get back to you within 24hrs.";
+
+            return PartialView("_ContactThanks");
         }
     }
 }
