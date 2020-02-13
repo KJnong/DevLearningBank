@@ -1,4 +1,5 @@
 ﻿using DL_Bank.Models;
+using DL_Bank.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace DL_Bank.Controllers
     public class TransactionController : Controller
     {
         private IApplicationDbContext db;
+
         public TransactionController()
         {
             db = new ApplicationDbContext();        
@@ -35,6 +37,8 @@ namespace DL_Bank.Controllers
             {
                 db.Transactions.Add(transaction);
                 db.SaveChanges();
+                var service = new CheckingAccountService(db);
+                service.UpdateBalance(transaction.CheckingAccountId);
 
                 return RedirectToAction("Index", "Home");
             }
