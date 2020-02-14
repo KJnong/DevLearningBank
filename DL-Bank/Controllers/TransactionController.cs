@@ -43,9 +43,28 @@ namespace DL_Bank.Controllers
                 return RedirectToAction("Index", "Home");
             }
             return View();
+        }
 
-            
+        public ActionResult Withdrawal(int checkingAccountId)
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult Withdrawal(Transaction transaction)
+        {
+            if (ModelState.IsValid)
+            {
+                transaction.Amount *= (-1);
+
+                db.Transactions.Add(transaction);
+                db.SaveChanges();
+                var service = new CheckingAccountService(db);
+                service.UpdateBalance(transaction.CheckingAccountId);
+
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
         }
     }
 }
