@@ -22,6 +22,13 @@ namespace DL_Bank.Controllers
             var userId = User.Identity.GetUserId();
             var checkingAccountId = db.CheckingAccounts.Where(c => c.ApplicationUserId == userId).First().Id;
             ViewBag.CheckingAccount = checkingAccountId;
+            ViewBag.Amount = -100;
+
+            if (User.IsInRole("Admin"))
+            {
+                return View("Admin");
+            }
+
             return View();
         }
 
