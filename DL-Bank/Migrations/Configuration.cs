@@ -14,6 +14,7 @@ namespace DL_Bank.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "DL_Bank.Models.ApplicationDbContext";
         }
 
