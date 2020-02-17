@@ -54,6 +54,13 @@ namespace DL_Bank.Controllers
         [HttpPost]
         public ActionResult Withdrawal(Transaction transaction)
         {
+            var checkAccount = db.CheckingAccounts.Find(transaction.CheckingAccountId);
+
+            if(checkAccount.Balance < transaction.Amount)
+            {
+                ModelState.AddModelError("Amount", "You have insufficient funds!");
+            }
+
             if (ModelState.IsValid)
             {
                 transaction.Amount *= (-1);

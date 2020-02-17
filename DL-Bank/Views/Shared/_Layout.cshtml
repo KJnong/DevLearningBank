@@ -21,7 +21,6 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -32,7 +31,7 @@
     <div class="container body-content">
         <div class="row">
             <div class="col-md-12">
-                <img src="~/Content/images/3a1b173a-f492-4ff9-8de3-584cd1b65574_200x200.png" class="img-responsive center-block" />
+                <img width="300" src="~/Content/images/3a1b173a-f492-4ff9-8de3-584cd1b65574_200x200.png" class="img-responsive center-block" />
             </div>
         </div>
     </div>
@@ -40,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - DL-Bank</p>
+            <p>&copy; @DateTime.Now.Date - DL-Bank</p>
         </footer>
     </div>
 
